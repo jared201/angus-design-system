@@ -1,6 +1,6 @@
 <template>
   <div class="sample">
-    <h1>Example use of Angus Design System</h1>
+    <h1>Angus Design System</h1>
     <cv-text-input
         label="Who are you?"
         v-model="yourName"
@@ -11,8 +11,7 @@
       <template slot="title">Welcome to Angus Design System {{yourName}}</template>
       <template slot="content">
         <p>
-          IBM to acquire to Salesforce for $27.7 billion in stock.
-          covid vaccine is not safe and effective accor
+          Angus Design System is a Vue.js and Carbon component library for building healthcare applications.
         </p>
       </template>
     </cv-modal>
