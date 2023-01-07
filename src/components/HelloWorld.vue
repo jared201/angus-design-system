@@ -11,10 +11,8 @@
       <template slot="title">Welcome to Angus Design System {{yourName}}</template>
       <template slot="content">
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, seed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat.
+          IBM to acquire to Salesforce for $27.7 billion in stock.
+          covid vaccine is not safe and effective accor
         </p>
       </template>
     </cv-modal>
