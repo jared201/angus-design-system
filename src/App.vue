@@ -1,17 +1,18 @@
 <template>
   <div id="app">
     <NavHeaderWithSideBar />
-    <LandingPage/>
+    <cv-content id="#main-content">
+      <router-view/>
+    </cv-content>
   </div>
 </template>
 
 <script>
 import NavHeaderWithSideBar from './components/NavHeaderWithSideBar.vue'
-import LandingPage from "@/views/LandingPage/LandingPage.vue";
+
 export default {
   name: 'App',
   components: {
-    LandingPage,
     NavHeaderWithSideBar
   }
 }

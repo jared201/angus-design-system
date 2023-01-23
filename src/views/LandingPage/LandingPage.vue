@@ -4,19 +4,19 @@
       <cv-column>
         <cv-row>
           <cv-column class="hero-panel">
-            <div class="hero-text">
-              Angus Design System
-              <p class="hero-subtitle">
-                Angus Design System is a Vue.js and Carbon component library for building healthcare applications.
-              </p>
-            </div>
+            <cv-tile >
+              <cv-tile-section>
+                <h1 class="hero-text">Angus Design System</h1>
+                <p class="hero-subtitle">Vue.js and Carbon component library for building healthcare applications.</p>
+              </cv-tile-section>
+            </cv-tile>
           </cv-column>
         </cv-row>
         <cv-row>
           <cv-column class="hero-panel">
             <div class="hero-text">
               <h2>Getting Started</h2>
-              <p class="hero-subtitle">
+              <p class="hero-subtitle ">
                 To get started, install the Angus Design System package and its peer dependencies.
               </p>
               <p class="hero-subtitle">
@@ -72,13 +72,13 @@ export default {
   font-weight: 300;
   line-height: 1.5;
   margin-bottom: 1rem;
-  text-align: center;
+  text-align: left;
 }
 .hero-subtitle {
   font-size: 1.5rem;
   font-weight: 300;
   line-height: 1.5;
   margin-bottom: 1rem;
-  text-align: center;
+  text-align: left;
 }
 </style>
