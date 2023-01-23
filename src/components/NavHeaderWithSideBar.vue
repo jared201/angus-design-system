@@ -3,9 +3,14 @@
     <cv-skip-to-content href="#main-content">
       Skip to content
     </cv-skip-to-content>
-    <cv-header-name href="javascript:void(0)" prefix="Angus">
+    <cv-header-name href="/" prefix="Angus">
       [Platform]
     </cv-header-name>
+    <cv-header-nav aria-label="Carbon nav">
+      <cv-header-menu-item to="/eclaims">
+        Philhealth eClaims
+      </cv-header-menu-item>
+    </cv-header-nav>
     <template v-slot:header-global>
       <cv-header-global-action
           aria-label="Notifications"
@@ -64,7 +69,7 @@
             </cv-switcher-item-link>
           </cv-switcher-item>
           <cv-switcher-item>
-            <cv-switcher-item-link href="javascript:void(0)">
+            <cv-switcher-item-link to="/eclaims">
               Philhealth eClaims
             </cv-switcher-item-link>
           </cv-switcher-item>
