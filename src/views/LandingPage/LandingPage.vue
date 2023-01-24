@@ -5,10 +5,10 @@
         <cv-row>
           <cv-column class="hero-panel">
             <cv-tile >
-              <cv-tile-section>
+
                 <h1 class="hero-text">Angus Design System</h1>
                 <p class="hero-subtitle">Vue.js and Carbon component library for building healthcare applications.</p>
-              </cv-tile-section>
+
             </cv-tile>
           </cv-column>
         </cv-row>
