@@ -46,8 +46,8 @@ export default {
   data () {
     return {
       icons : {
-        eclaims: require("../../assets/icons/png/filled/objects/desktop_app@2x.png"),
-        cew: require("../../assets/icons/png/filled/objects/spreadsheets@2x.png"),
+        eclaims: require("../../assets/icons/svg/outline/objects/desktop_app.svg"),
+        cew: require("../../assets/icons/svg/outline/objects/spreadsheets.svg"),
       }
     }
   },
