@@ -12,6 +12,13 @@
         </cv-row>
         <cv-row class="row_spacing">
           <cv-column>
+            <cv-tile kind="clickable" @click="openCEW">
+              <img class="img_left" :src="icons.cew"/>
+              <h1 class="hero-text">CEW</h1>
+              <p class="hero-subtitle">Click here to verify eligiblity</p>
+            </cv-tile>
+          </cv-column>
+          <cv-column>
             <cv-tile kind="clickable" @click="openEclaims">
               <img class="img_left" :src="icons.eclaims"/>
               <h1 class="hero-text">eClaims</h1>
@@ -19,13 +26,7 @@
             </cv-tile>
 
           </cv-column>
-          <cv-column>
-            <cv-tile kind="clickable" @click="openCEW">
-              <img class="img_left" :src="icons.cew"/>
-              <h1 class="hero-text">CEW</h1>
-              <p class="hero-subtitle">Click here to verify eligiblity</p>
-            </cv-tile>
-          </cv-column>
+
         </cv-row>
       </cv-column>
     </cv-row>
@@ -40,7 +41,7 @@ export default {
       this.$router.push("/eclaims_form");
     },
     openCEW() {
-      this.$router.push("/cew_form");
+      this.$router.push("/cew_form/cew_step_one");
     }
   },
   data () {

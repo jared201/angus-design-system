@@ -1,7 +1,7 @@
 <template>
   <cv-grid>
     <cv-row>
-      <cv-column class="hero-panel">
+      <cv-column class="hero-panel card">
         <p class="hero-title">CEW Form</p>
         <cv-progress
             :vertical="vertical" @step-clicked="actionStepClicked">
@@ -11,16 +11,27 @@
         </cv-progress>
       </cv-column>
     </cv-row>
+    <cv-row>
+      <cv-column class="form-background panel-border">
+<!--        <CewStepOne/>-->
+        <router-view/>
+
+      </cv-column>
+    </cv-row>
   </cv-grid>
 </template>
 
 <script>
+// import CewStepOne from "@/views/CewPage/CewStepOne.vue";
+
 export default {
   name: "CewPage",
+  // components: {CewStepOne},
   methods: {
     actionStepClicked(step) {
       console.log(step);
-    }
+    },
+
   },
 }
 </script>
@@ -39,4 +50,22 @@ export default {
   margin-bottom: 1rem;
   text-align: left;
 }
+.flushed-width-panel {
+  width: 100%;
+  margin: fill;
+}
+.form-background {
+  background-color: white;
+}
+.text-input-half {
+  width: 100%;
+}
+.panel-border {
+  border: 1px solid #dfe3e6;
+  border-radius: 3px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+}
+
 </style>
