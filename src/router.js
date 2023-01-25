@@ -15,6 +15,11 @@ export default new Router({
             path: '/eclaims',
             name: 'EclaimsPage',
             component: () => import('@/views/EclaimsPage'),
+        },
+        {
+            path: '/cew_form',
+            name: 'CewPage',
+            component: () => import('@/views/CewPage'),
         }
     ],
 });
