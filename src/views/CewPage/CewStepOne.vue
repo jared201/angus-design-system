@@ -3,6 +3,26 @@
     <cv-form class="text-input-half flow-grid">
       <cv-form-item>
         <cv-text-input class="input-width"
+                       id="pin"
+                       label="PIN"
+                       placeholder="Philhealth Identification Number"
+                       invalid-text="A valid value is required"
+                       invalid
+                       @input="actionInput"
+        />
+      </cv-form-item>
+      <cv-form-item>
+        <cv-text-input class="input-width"
+                       id="member-lastname"
+                       label="Member's Complete Last Name"
+                       placeholder="Member's Complete Last Name"
+                       invalid-text="A valid value is required"
+                       invalid
+                       @input="actionInput"
+        />
+      </cv-form-item>
+      <cv-form-item>
+        <cv-text-input class="input-width"
                        id="member-lastname"
                        label="Member's Complete Last Name"
                        placeholder="Member's Complete Last Name"
@@ -29,6 +49,16 @@
             invalid-text="A valid value is required"
             invalid
             @input="actionInput"
+        />
+      </cv-form-item>
+      <cv-form-item>
+        <cv-text-input class="input-width"
+                       id="member-suffix"
+                       label="Member's Suffix"
+                       placeholder="Jr, Sr, III, etc."
+                       invalid-text="A valid value is required"
+                       invalid
+                       @input="actionInput"
         />
       </cv-form-item>
       <cv-form-item>
@@ -67,7 +97,7 @@
 
       </cv-form-item>
       <cv-form-item>
-        <cv-date-picker kind="simple" class="input-width"
+        <cv-date-picker kind="single" class="input-width bx--label"
                         id="member-birthdate"
                         :date-label="dateLabel"
                         invalid-text="A valid value is required"
@@ -84,6 +114,8 @@
 </template>
 
 <script>
+import CewPage from "@/views/CewPage/index";
+
 export default {
   name: "CewStepOne",
   data() {
@@ -104,6 +136,8 @@ export default {
     },
     nextStep() {
       this.$router.push("/cew_form/cew_step_two");
+      this.$emit("updateStep", true);
+      CewPage.data().complete1 = true;
     },
   },
 }
@@ -128,9 +162,6 @@ export default {
   display: grid;
   grid-template-columns: 1fr 1fr;
   column-gap: 1rem;
-}
-.input-width {
-  width: 100%;
 }
 label.bx--label {
   font-size: 0.875rem;

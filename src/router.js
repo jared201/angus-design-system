@@ -23,11 +23,18 @@ export default new Router({
             children: [
                 {
                     path: 'cew_step_one',
+                    name: 'CewStepOne',
                     component: () => import('@/views/CewPage/CewStepOne'),
                 },
                 {
                     path: 'cew_step_two',
+                    name: 'CewStepTwo',
                     component: () => import('@/views/CewPage/CewStepTwo'),
+                },
+                {
+                    path: 'cew_step_three',
+                    name: 'CewStepThree',
+                    component: () => import('@/views/CewPage/CewStepThree'),
                 }
             ]
         }

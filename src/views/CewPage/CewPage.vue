@@ -5,20 +5,21 @@
         <p class="hero-title">CEW Form</p>
         <cv-progress
             :vertical="vertical" @step-clicked="actionStepClicked">
-          <cv-progress-step label="Step 1" additional-info="Optional info" complete description="This is the first step" @step-clicked="actionStepClicked" />
-          <cv-progress-step label="Step 2 is a bit longer" current description="This is the second step" @step-clicked="actionStepClicked"/>
-          <cv-progress-step label="Step 3"  tip-text="Step 3 has hard coded tip" description="This is the third step" @step-clicked="actionStepClicked" />
+          <cv-progress-step label="Step 1" additional-info="Member's info" :complete="complete1" description="This is the first step" @step-clicked="actionStepClicked" />
+          <cv-progress-step label="Step 2" current additional-info="Patient's info" :complete="complete2" @step-clicked="actionStepClicked"/>
+          <cv-progress-step label="Step 3"  additional-info="Employment Info" :complete="complete3" @step-clicked="actionStepClicked" />
         </cv-progress>
       </cv-column>
     </cv-row>
     <cv-row>
       <cv-column class="form-background panel-border">
 <!--        <CewStepOne/>-->
-        <router-view/>
+        <router-view />
 
       </cv-column>
     </cv-row>
   </cv-grid>
+
 </template>
 
 <script>
@@ -26,11 +27,44 @@
 
 export default {
   name: "CewPage",
+  data() {
+    return {
+      vertical: false,
+      complete1: false,
+      complete2: false,
+      complete3: false,
+    };
+
+  },
   // components: {CewStepOne},
   methods: {
     actionStepClicked(step) {
       console.log(step);
     },
+
+  },
+  watch: {
+    $route(to, from) {
+      console.log(to);
+
+      console.log(from);
+      if (from.name == 'CewStepOne' && to.name == 'CewStepTwo') {
+        this.complete1 = true;
+      }
+      if (from.name == 'CewStepTwo' && to.name == 'CewStepThree') {
+        this.complete2 = true;
+      }
+      if(from.name == 'CewStepThree' && to.name == 'CewStepTwo') {
+        this.complete3 = false;
+        this.complete2 = false;
+      }
+      if(to.name=='CewStepOne') {
+        this.complete1 = false;
+        this.complete2 = false;
+        this.complete3 = false;
+      }
+
+    }
 
   },
 }
