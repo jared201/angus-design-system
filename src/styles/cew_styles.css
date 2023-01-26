@@ -1,0 +1,64 @@
+.cew-form-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 1rem;
+}
+.date-label-left{
+    text-align: left;
+}
+.cew-panel-margin{
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+.input-margin-top{
+    margin-top: 10px;
+}
+.bx--label{
+    font-size: 0.875rem;
+    font-weight: 400;
+    line-height: 1.25rem;
+    margin-bottom: 0.5rem;
+    display: block;
+    text-align: left;
+}
+.button-margin {
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+}
+.input-width {
+    width: 100%;
+}
+* {
+    padding: 0;
+    margin: 0
+}
+
+.wrapper {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color:#eee;
+}
+
+.animated-check {
+    height: 10em;
+    width: 10em
+}
+
+.animated-check path {
+    fill: none;
+    stroke: #7ac142;
+    stroke-width: 4;
+    stroke-dasharray: 23;
+    stroke-dashoffset: 23;
+    animation: draw 1s linear forwards;
+    stroke-linecap: round;
+    stroke-linejoin: round
+}
+
+@keyframes draw {
+    to {
+        stroke-dashoffset: 0
+    }
+}
