@@ -23,16 +23,6 @@
       </cv-form-item>
       <cv-form-item>
         <cv-text-input class="input-width"
-                       id="member-lastname"
-                       label="Member's Complete Last Name"
-                       placeholder="Member's Complete Last Name"
-                       invalid-text="A valid value is required"
-                       invalid
-                       @input="actionInput"
-        />
-      </cv-form-item>
-      <cv-form-item>
-        <cv-text-input class="input-width"
             id="member-firstname"
             label="Member's Complete First Name"
             placeholder="Member's Complete First Name"
