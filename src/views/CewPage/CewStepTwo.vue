@@ -28,16 +28,19 @@
                          invalid-text="A valid value is required"
                          invalid
                          @input="actionInput"
+                         v-model = "memberInfo.memberLastName"
+
           />
           </cv-form-item>
           <cv-form-item>
             <cv-text-input class="input-width input-margin-top"
                            id="patient-firstname"
                            label="Patient's Complete First Name"
-                           placeholder="Member's Complete First Name"
+                           placeholder="Patient's Complete First Name"
                            invalid-text="A valid value is required"
                            invalid
                            @input="actionInput"
+                           v-model="memberInfo.memberFirstName"
             />
           </cv-form-item>
           <cv-form-item>
@@ -48,6 +51,7 @@
                            invalid-text="A valid value is required"
                            invalid
                            @input="actionInput"
+                            v-model="memberInfo.memberMiddleName"
             />
           </cv-form-item>
           <cv-form-item>
@@ -58,6 +62,7 @@
                            invalid-text="A valid value is required"
                            invalid
                            @input="actionInput"
+                            v-model="memberInfo.memberSuffix"
             />
           </cv-form-item>
           <cv-form-item>
@@ -68,6 +73,7 @@
                             :pattern="pattern"
                             invalid
                             @input="actionInput"
+                            v-model="memberInfo.memberBirthdate"
             />
 
           </cv-form-item>
@@ -100,8 +106,14 @@
 </template>
 
 <script>
+import {getMemberInfo} from "@/views/CewPage/StepModel";
+
 export default {
   name: "CewStepTwo",
+  created() {
+    const memberInfo = getMemberInfo();
+    console.log(memberInfo);
+  },
   data() {
     return {
       dateLabel: "Patient's Birthdate",
@@ -137,6 +149,12 @@ export default {
           text: "Non Paying Government", value: "PG"
         }
       ],
+      patientLastname: 'Odulio',
+      patientFirstname: "",
+      patientMiddlename: "",
+      patientSuffix: "",
+      patientBirthdate: "",
+      memberInfo : getMemberInfo(),
     };
   },
   methods: {
