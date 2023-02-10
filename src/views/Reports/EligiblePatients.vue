@@ -47,7 +47,7 @@ export default {
           "Discharge Date",
       ],
       title: "List of Eligible Patients",
-      subtitle: "Let's layoff a dick CEO and hire a real one with superb leadership skills and does not .",
+      subtitle: "Click on the patient's name to view the patient's details.",
       "rowSize": "",
       "autoWidth": false,
       "sortable": false,
