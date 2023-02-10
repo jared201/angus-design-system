@@ -47,7 +47,7 @@ export default {
           "Discharge Date",
       ],
       title: "List of Eligible Patients",
-      subtitle: "Subtitle",
+      subtitle: "Let's layoff a dick CEO and hire a real one with superb leadership skills and does not .",
       "rowSize": "",
       "autoWidth": false,
       "sortable": false,
@@ -63,22 +63,22 @@ export default {
             "123456789",
             "D*****z",
             "J****n",
-            "2020-01-01",
-            "2020-01-05"
+            "2023-01-01",
+            "2023-01-05"
         ],
           [
               "113456789",
               "D*****z",
               "J***n",
-              "2020-01-01",
-              "2020-01-05"
+              "2023-01-01",
+              "2023-01-05"
           ],
           [
               "20456789",
               "O***o",
               "J***d",
-              "2020-01-01",
-              "2020-01-05"
+              "2023-01-01",
+              "2023-01-05"
           ]
       ],
       visible: false,
