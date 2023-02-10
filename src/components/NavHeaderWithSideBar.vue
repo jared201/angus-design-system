@@ -40,7 +40,7 @@
           </cv-header-side-nav-items>
 
           <cv-side-nav-menu title="eClaims Reports">
-            <cv-side-nav-menu-item href="javascript:void(0)" active>
+            <cv-side-nav-menu-item to="/eligible_patients" active>
               Eligible Patients
             </cv-side-nav-menu-item>
             <cv-side-nav-menu-item href="javascript:void(0)">
