@@ -18,6 +18,11 @@ export default new Router({
             component: () => import('@/views/EclaimsPage'),
         },
         {
+            path: '/eligible_patients',
+            name: 'EligiblePatientsPage',
+            component: () => import('@/views/Reports/EligiblePatients'),
+        },
+        {
             path: '/cew_form',
             component: () => import('@/views/CewPage'),
             children: [
