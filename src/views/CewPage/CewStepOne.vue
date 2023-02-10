@@ -9,6 +9,7 @@
                        invalid-text="A valid value is required"
                        invalid
                        @input="actionInput"
+                       v-model = "memberInfo.pin"
         />
       </cv-form-item>
       <cv-form-item>
@@ -19,16 +20,8 @@
                        invalid-text="A valid value is required"
                        invalid
                        @input="actionInput"
-        />
-      </cv-form-item>
-      <cv-form-item>
-        <cv-text-input class="input-width"
-                       id="member-lastname"
-                       label="Member's Complete Last Name"
-                       placeholder="Member's Complete Last Name"
-                       invalid-text="A valid value is required"
-                       invalid
-                       @input="actionInput"
+                       v-model = "memberInfo.memberLastName"
+                       name="memberLastName"
         />
       </cv-form-item>
       <cv-form-item>
@@ -39,6 +32,7 @@
             invalid-text="A valid value is required"
             invalid
             @input="actionInput"
+            v-model = "memberInfo.memberFirstName"
         />
       </cv-form-item>
       <cv-form-item>
@@ -49,6 +43,7 @@
             invalid-text="A valid value is required"
             invalid
             @input="actionInput"
+            v-model="memberInfo.memberMiddleName"
         />
       </cv-form-item>
       <cv-form-item>
@@ -59,6 +54,7 @@
                        invalid-text="A valid value is required"
                        invalid
                        @input="actionInput"
+                       v-model="memberInfo.memberSuffix"
         />
       </cv-form-item>
       <cv-form-item>
@@ -69,6 +65,7 @@
             invalid-text="A valid value is required"
             invalid
             @input="actionInput"
+            v-model="memberInfo.memberAddress"
         />
       </cv-form-item>
       <cv-form-item>
@@ -79,6 +76,7 @@
             invalid-text="A valid value is required"
             invalid
             @input="actionInput"
+                       v-model="memberInfo.zipcode"
         />
       </cv-form-item>
       <cv-form-item>
@@ -90,8 +88,9 @@
                      value=""
             invalid
             @input="actionInput"
+            v-model="selectedPatientType"
         >
-          <cv-dropdown-item v-for="text in patientIs" v-bind:key="text.text" :value="text.value">{{ text.text }}</cv-dropdown-item>
+          <cv-dropdown-item v-for="text in patientIs" v-bind:key="text.text" :value="text.value" >{{ text.text }} </cv-dropdown-item>
 
         </cv-dropdown>
 
@@ -104,9 +103,11 @@
                         :pattern="pattern"
                         invalid
                         @input="actionInput"
+                        v-model="memberInfo.memberBirthdate"
         />
 
       </cv-form-item>
+
 
     </cv-form>
     <cv-button class="button-left" @click="nextStep">Next</cv-button>
@@ -115,6 +116,7 @@
 
 <script>
 import CewPage from "@/views/CewPage/index";
+import { setMemberInfo } from "@/views/CewPage/StepModel";
 
 export default {
   name: "CewStepOne",
@@ -128,6 +130,18 @@ export default {
         { text: "Child", value: "C" },
         { text: "Parent", value: "P" }
       ],
+      selectedPatientType: '',
+      memberInfo : {
+        pin: '',
+        memberLastName: '',
+        memberFirstName: '',
+        memberMiddleName: '',
+        memberSuffix: '',
+        memberAddress: '',
+        zipcode: '',
+        patientIs: '',
+        memberBirthdate: ''
+      }
     };
   },
   methods: {
@@ -138,8 +152,25 @@ export default {
       this.$router.push("/cew_form/cew_step_two");
       this.$emit("updateStep", true);
       CewPage.data().complete1 = true;
+      console.log(this.memberInfo.memberLastName);
+      console.log(this.memberInfo);
     },
+    updatePatientType(event) {
+      console.log(event);
+      this.selectedPatientType = event;
+    }
   },
+  watch: {
+    selectedPatientType: function (val) {
+      console.log('selectedPatientType',val);
+      this.selectedPatientType = val;
+      this.memberInfo.patientIs = val;
+      if (val == 'M'){
+        console.log('member');
+        setMemberInfo(this.memberInfo);
+      }
+    }
+  }
 }
 </script>
 

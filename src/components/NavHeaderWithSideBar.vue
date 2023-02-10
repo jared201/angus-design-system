@@ -39,18 +39,18 @@
             </cv-header-menu>
           </cv-header-side-nav-items>
 
-          <cv-side-nav-menu title="L1 menu">
+          <cv-side-nav-menu title="Reports">
             <cv-side-nav-menu-item href="javascript:void(0)" active>
-              L2 menu item
+              Eligible Patients
             </cv-side-nav-menu-item>
             <cv-side-nav-menu-item href="javascript:void(0)">
-              L2 menu item
+              Completed Claims
             </cv-side-nav-menu-item>
             <cv-side-nav-menu-item href="javascript:void(0)">
-              L2 menu item
+              Pending Claims
             </cv-side-nav-menu-item>
           </cv-side-nav-menu>
-          <cv-side-nav-menu title="L1 menu">
+<!--          <cv-side-nav-menu title="L1 menu">
             <cv-side-nav-menu-item href="javascript:void(0)">
               L2 menu item
             </cv-side-nav-menu-item>
@@ -66,7 +66,7 @@
           </cv-side-nav-link>
           <cv-side-nav-link href="javascript:void(0)">
             L1 link
-          </cv-side-nav-link>
+          </cv-side-nav-link>-->
 
         </cv-side-nav-items>
       </cv-side-nav>
