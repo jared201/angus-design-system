@@ -159,7 +159,8 @@ export default {
   },
   methods: {
     backAction() {
-      this.$router.push({ name: "CewStepOne" });
+      //this.$router.push({ name: "CewStepOne" });
+      history.back();
       this.$emit("updateStep", false);
     },
     actionInput() {

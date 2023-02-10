@@ -136,23 +136,21 @@ export default {
       this.$emit('submitAction');
       this.isActive = true;
       console.log(this.pen);
-      this.title = 'Success';
-      setTimeout(() => {
+
+      setInterval(() => {
         this.isActive = false;
-        if (this.pen == '12345678') {
-          this.title = 'Success';
-          this.caption = 'Patient is eligible for reimbursement.';
-          this.kind = 'success';
-          this.visible = true;
-        } else {
-          this.title = 'Rejected';
-          this.caption = 'Patient is not eligible for PhilHealth reimbursement.';
-          this.visible = true;
-          this.kind = 'error';
-        }
-
+       if(this.pen == '1234567890') {
+         this.visible = true;
+         this.kind = 'success';
+         this.title = 'Success';
+         this.caption = 'Patient is eligible for reimbursement.';
+       } else {
+         this.visible = true;
+         this.kind = 'error';
+         this.title = 'Rejected';
+         this.caption = 'Patient is not eligible for PhilHealth reimbursement.';
+       }
       }, 2000);
-
     },
     actionInput(event) {
       this.$emit('actionInput', event);
