@@ -13,8 +13,8 @@
                           :batch-cancel-label="batchCancelLabel"
                           :zebra="zebra" :static-width="staticWidth"
                           :sticky-header="stickyHeader" @sort="onSort"
-                           @search="onFilter" :subtitle="subtitle"
-                           :use_actions="use_actions" :edit_action="editAction"/>
+                          @search="onFilter" :subtitle="subtitle"
+                          :use_actions="use_actions" :edit_action="editAction"/>
     </cv-row>
     <cv-modal @modal-shown="actionShown" @modal-hidden="actionHidden" :visible="visible" :auto-hide-off="autoHide">
       <template slot="label">Edit</template>
@@ -34,19 +34,19 @@
 import PatientDataTable from "@/views/Reports/PatientDataTable.vue";
 
 export default {
-  name: "EligiblePatients",
+  name: "CompletedClaims",
   components: {PatientDataTable},
   data() {
     return {
       autoHideOff: false,
       columns : [
-          "Philhealth ID Number",
-          "Last Name",
-          "First Name",
-          "Admission Date",
-          "Discharge Date",
+        "Philhealth ID Number",
+        "Last Name",
+        "First Name",
+        "Admission Date",
+        "Discharge Date",
       ],
-      title: "List of Eligible Patients",
+      title: "List of Completed Claims",
       subtitle: "Subtitle",
       "rowSize": "",
       "autoWidth": false,
@@ -60,26 +60,26 @@ export default {
       "use_actions": true,
       "data": [
         [
-            "123456789",
-            "D*****z",
-            "J****n",
-            "2020-01-01",
-            "2020-01-05"
+          "123456789",
+          "Delgado",
+          "Juan",
+          "2020-01-01",
+          "2020-01-05"
         ],
-          [
-              "113456789",
-              "D*****z",
-              "J***n",
-              "2020-01-01",
-              "2020-01-05"
-          ],
-          [
-              "20456789",
-              "O***o",
-              "J***d",
-              "2020-01-01",
-              "2020-01-05"
-          ]
+        [
+          "113456789",
+          "Corpuz",
+          "Juan",
+          "2020-01-01",
+          "2020-01-05"
+        ],
+        [
+          "20456789",
+          "Pineda",
+          "Cho",
+          "2020-01-01",
+          "2020-01-05"
+        ]
       ],
       visible: false,
       size: "sm",

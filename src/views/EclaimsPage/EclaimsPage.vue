@@ -41,7 +41,7 @@ export default {
       this.$router.push("/eclaims_form");
     },
     openCEW() {
-      this.$router.push("/cew_form/cew_step_one");
+      this.$router.replace("/cew_form/cew_step_one").catch(err => { console.log(err)});
     }
   },
   data () {

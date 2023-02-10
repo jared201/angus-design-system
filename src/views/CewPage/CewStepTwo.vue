@@ -113,6 +113,7 @@ export default {
   created() {
     const memberInfo = getMemberInfo();
     console.log(memberInfo);
+
   },
   data() {
     return {
@@ -159,8 +160,7 @@ export default {
   },
   methods: {
     backAction() {
-      //this.$router.push({ name: "CewStepOne" });
-      history.back();
+      this.$router.push({ name: "CewStepOne" });
       this.$emit("updateStep", false);
     },
     actionInput() {

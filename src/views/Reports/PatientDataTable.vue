@@ -4,6 +4,7 @@
       :auto-width="autoWidth"
       :sortable="sortable"
       :title="title"
+      :subtitle="description"
       :action-bar-aria-label="actionBarAriaLabel"
       :batch-cancel-label="batchCancelLabel"
       :zebra="zebra"
@@ -14,8 +15,9 @@
       :pagination="{ numberOfItems: 23, pageSizes: [5, 10, 15, 20, 25]  }" @pagination="actionOnPagination"
       v-model="rowSelects" @row-select-change="actionRowSelectChange"
       @sort="onSort"
+      :use_actions="use_actions"
       :overflow-menu="sampleOverflowMenu"
-      :helper-text="helperText" :data="filteredData" @overflow-menu-click="onOverflowMenuClick"  ref="table">
+      :helper-text="helperText" :data="data" @overflow-menu-click="onOverflowMenuClick"  ref="table">
     <template v-if="use_actions" slot="actions">
       <cv-data-table-action @click="action1">
         <svg fill-rule="evenodd" height="16" name="download" role="img" viewBox="0 0 14 16" width="14" aria-label="Download" alt="Download">
@@ -24,7 +26,7 @@
           <path d="M13 15v-2h1v2a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1v-2h1v2h12z"></path>
         </svg>
       </cv-data-table-action>
-      <cv-data-table-action @click="action2">
+      <cv-data-table-action @click="edit_action">
         <svg fill-rule="evenodd" height="16" name="edit" role="img" viewBox="0 0 16 16" width="16" aria-label="Edit" alt="Edit">
           <title>Edit</title>
           <path d="M7.926 3.38L1.002 9.72V12h2.304l6.926-6.316L7.926 3.38zm.738-.675l2.308 2.304 1.451-1.324-2.308-2.309-1.451 1.329zM.002 9.28L9.439.639a1 1 0 0 1 1.383.03l2.309 2.309a1 1 0 0 1-.034 1.446L3.694 13H.002V9.28zM0 16.013v-1h16v1z"></path>
@@ -69,6 +71,10 @@ export default {
     "staticWidth": Boolean,
     "stickyHeader": Boolean,
     "columns": Array,
+    "description": String,
+    "use_actions": Boolean,
+    "data": Array,
+    "edit_action": Function,
   }
 }
 </script>

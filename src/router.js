@@ -1,6 +1,7 @@
 import Vue from 'vue';
 import Router from 'vue-router';
 import LandingPage from '@/views/LandingPage';
+import CewStepOne from "@/views/CewPage/CewStepOne.vue";
 
 
 Vue.use(Router);
@@ -19,8 +20,13 @@ export default new Router({
         },
         {
             path: '/eligible_patients',
-            name: 'EligiblePatientsPage',
+            name: 'EligiblePatients',
             component: () => import('@/views/Reports/EligiblePatients'),
+        },
+        {
+            path: '/completed_claims',
+            name: 'CompletedClaims',
+            component: () => import('@/views/Reports/CompletedClaims'),
         },
         {
             path: '/cew_form',
@@ -29,7 +35,7 @@ export default new Router({
                 {
                     path: 'cew_step_one',
                     name: 'CewStepOne',
-                    component: () => import('@/views/CewPage/CewStepOne'),
+                    component: CewStepOne,
                 },
                 {
                     path: 'cew_step_two',
