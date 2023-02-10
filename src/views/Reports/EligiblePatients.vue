@@ -2,15 +2,34 @@
   <cv-grid>
     <cv-row>
       <cv-column class="hero-panel">
-        <cv-tile >
-            <h1 class="hero-text">Clarity Philhealth eClaims</h1>
-            <p class="hero-subtitle">List of Eligible Patients</p>
-        </cv-tile>
+
       </cv-column>
     </cv-row>
     <cv-row>
-      <patient-data-table :data="data" :columns="columns" :options="options"/>
+      <patient-data-table :data="data" :columns="columns" :options="options"
+                          :title="title" :row-size="rowSize"
+                          :auto-width="autoWidth" :sortable="sortable"
+                          :action-bar-aria-label="actionBarAriaLabel"
+                          :batch-cancel-label="batchCancelLabel"
+                          :zebra="zebra" :static-width="staticWidth"
+                          :sticky-header="stickyHeader" @sort="onSort"
+                           @search="onFilter" :subtitle="subtitle"
+                           :use_actions="use_actions" :edit_action="editAction"/>
     </cv-row>
+    <cv-modal :visible="visible" :size="size" :auto-hide-off="autoHideOff" @modal-shown="actionShown"
+              @modal-hidden="actionHidden">
+      <cv-modal-header>
+        <h4 class="bx--modal-header__label bx--type-delta">{{modalTitle}}</h4>
+        <p class="bx--modal-header__heading bx--type-beta">{{ modalTitle }}</p>
+      </cv-modal-header>
+      <cv-modal-body>
+        <p>Under construction</p>
+      </cv-modal-body>
+      <cv-modal-footer>
+        <cv-button kind="secondary" @click.prevent="closeModal">Cancel</cv-button>
+
+      </cv-modal-footer>
+    </cv-modal>
   </cv-grid>
 </template>
 
@@ -22,13 +41,78 @@ export default {
   components: {PatientDataTable},
   data() {
     return {
+      autoHideOff: false,
       columns : [
           "Philhealth ID Number",
           "Last Name",
           "First Name",
           "Admission Date",
           "Discharge Date",
-      ]
+      ],
+      title: "List of Eligible Patients",
+      subtitle: "Subtitle",
+      "rowSize": "",
+      "autoWidth": false,
+      "sortable": false,
+      "filterable": false,
+      "actionBarAriaLabel": "Custom action bar aria label",
+      "batchCancelLabel": "Cancel",
+      "zebra": false,
+      "staticWidth": false,
+      "stickyHeader": false,
+      "use_actions": true,
+      "data": [
+        [
+            "123456789",
+            "Dela Cruz",
+            "Juan",
+            "2020-01-01",
+            "2020-01-05"
+        ],
+          [
+              "113456789",
+              "Dela Cruz",
+              "Juan",
+              "2020-01-01",
+              "2020-01-05"
+          ],
+          [
+              "20456789",
+              "Odulio",
+              "Jared",
+              "2020-01-01",
+              "2020-01-05"
+          ]
+      ],
+      visible: false,
+      size: "sm",
+      use_label: true,
+      use_title: true,
+      use_content: true,
+      modalTitle: ""
+    }
+  },
+  methods: {
+    actionShown() {
+      console.log("action shown");
+      this.visible = true;
+    },
+    actionHidden() {
+      console.log("action hidden");
+    },
+    onSort(event) {
+      console.log(event);
+    },
+    onFilter(event) {
+      console.log(event);
+    },
+    editAction(event) {
+      console.log('edit action',event);
+      this.modalTitle = "Edit Patient";
+      this.visible = true;
+    },
+    closeModal() {
+      this.visible = false;
     }
   }
 }
