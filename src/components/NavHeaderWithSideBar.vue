@@ -43,7 +43,7 @@
             <cv-side-nav-menu-item to="/eligible_patients" active>
               Eligible Patients
             </cv-side-nav-menu-item>
-            <cv-side-nav-menu-item href="javascript:void(0)">
+            <cv-side-nav-menu-item to="/completed_claims">
               Completed Claims
             </cv-side-nav-menu-item>
             <cv-side-nav-menu-item href="javascript:void(0)">
